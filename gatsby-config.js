@@ -1,11 +1,21 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Level Up Shopify`,
+    description: `A level up and shopify tutoral`,
+    author: `Andy`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-shopify`,
+      options: {
+        shopName: "andys-level-up-tuts-store",
+        accessToken: `31aa0eae1da41ca3da6ebd523abae79d`,
+        verbose: true,
+        paginationSize: 250,
+        apiVersion: "2020-07",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
